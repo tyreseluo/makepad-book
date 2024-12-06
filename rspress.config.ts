@@ -1,6 +1,10 @@
 import * as path from 'path';
 import { defineConfig } from 'rspress/config';
 
+// plugins
+import mermaid from 'rspress-plugin-mermaid';
+import alignImage from 'rspress-plugin-align-image';
+
 export default defineConfig({
   base: '/makepad-book/',
   root: path.join(__dirname, 'docs'),
@@ -9,6 +13,10 @@ export default defineConfig({
   lang: 'zh',
   icon: '/favicon.ico',
   globalStyles: path.join(__dirname, 'theme', 'index.css'),
+  plugins: [
+    mermaid(),
+    alignImage()
+  ],
   logo: {
     light: '/logo_makepad.svg',
     dark: '/logo_makepad.svg',
@@ -25,9 +33,6 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', mode: 'link', content: 'https://github.com/Project-Robius-China/makepad-book' },
     ],
-    footer: {
-      message: '© 2024 Project Robius China (Makepad Book) Maintainers. All Rights Reserved.',
-    },
     locales: [
       {
         lang: 'zh',
